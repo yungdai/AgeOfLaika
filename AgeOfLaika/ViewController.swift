@@ -27,6 +27,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func convertToDogYearsButtonPressed(sender: UIButton) {
+        let stringFromTextField = humanYearsTextField.text
+        let optionalIntfromTextField = stringFromTextField.toInt()
+        let intFromOptional = optionalIntfromTextField!
+        dogYearsLabel.hidden = false
+        dogYearsLabel.text = "\(intFromOptional * 7)" + " Dog Years"
+        humanYearsTextField.resignFirstResponder()
     }
 
 }
