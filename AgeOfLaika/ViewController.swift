@@ -29,10 +29,22 @@ class ViewController: UIViewController {
     @IBAction func convertToDogYearsButtonPressed(sender: UIButton) {
         let stringFromTextField = humanYearsTextField.text
         let optionalIntfromTextField = stringFromTextField.toInt()
-        let intFromOptional = optionalIntfromTextField!
-        dogYearsLabel.hidden = false
-        dogYearsLabel.text = "\(intFromOptional * 7)" + " Dog Years"
-        humanYearsTextField.resignFirstResponder()
+        let doubleFromOptional = Double(optionalIntfromTextField!)
+
+        
+// updated and completed challenge for Age of Laika with Control Flow
+        
+        if doubleFromOptional <= 2 {
+            dogYearsLabel.hidden = false
+            dogYearsLabel.text = "\(doubleFromOptional * 10.5)" + " Dog Years"
+            humanYearsTextField.resignFirstResponder()
+                    }
+        else if doubleFromOptional > 2 {
+            dogYearsLabel.hidden = false
+            dogYearsLabel.text = "\(((doubleFromOptional - 2) * 7) + 21)" + " Dog Years"
+            humanYearsTextField.resignFirstResponder()
+        }
+
     }
 
 }
